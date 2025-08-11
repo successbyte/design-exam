@@ -23,7 +23,6 @@ function HeroImage({
       <img
         src={mainImage}
         alt={mainAlt}
-        loading="lazy"
         className="w-full h-auto rounded-full object-cover"
       />
 
