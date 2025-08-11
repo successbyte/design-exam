@@ -1,18 +1,41 @@
 import React from "react";
-import SoftStar from "@/assets/soft-star.svg";
-import StarSix from "@/assets/star6.svg";
-import Image from "@/assets/image.png";
 
-function HeroImage() {
+interface DecorativeItem {
+  src: string;
+  position: string; // Tailwind classes for positioning & sizing
+}
+
+interface HeroImageProps {
+  mainImage: string;
+  mainAlt: string;
+  decorative?: DecorativeItem[];
+  className?: string;
+}
+
+function HeroImage({
+  mainImage,
+  mainAlt,
+  decorative = [],
+  className = "",
+}: HeroImageProps) {
   return (
-    <div className="relative w-[420px] -mt-10 p-8 rounded-full border border-gray-500">
-      <img src={Image} alt="woman with nice style" />
+    <div className="relative max-w-full w-[350px] xl:w-[410px] lg:-mt-10 p-8 xl:mr-8 rounded-full border border-gray-500">
       <img
-        src={SoftStar}
-        alt="Soft star"
-        className="absolute bottom-2 right-0 w-24"
+        src={mainImage}
+        alt={mainAlt}
+        loading="lazy"
+        className="w-full h-auto rounded-full object-cover"
       />
-      <img src={StarSix} alt="Soft 6" className="absolute top-8 left-6 w-16" />
+
+      {decorative.map((item, idx) => (
+        <img
+          key={idx}
+          src={item.src}
+          alt=""
+          aria-hidden="true"
+          className={item.position}
+        />
+      ))}
     </div>
   );
 }
