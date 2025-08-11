@@ -8,7 +8,7 @@ export default function Home() {
     <main className="relative w-full h-screen mx-auto z-0">
       <img
         src={bg}
-        alt="background"
+        alt="nice gradient image"
         className="absolute inset-0 w-full h-full object-cover"
       />
 
