@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <main className="relative h-full w-full min-h-screen mx-auto p-4">
       <img
-        className="absolute top-0 bottom-0 left-0 right-0 w-full h-full object-cover"
+        className="absolute top-0 bottom-0 left-0 right-0 !w-full !h-full !object-cover"
         src={bg}
         alt="background"
       />
